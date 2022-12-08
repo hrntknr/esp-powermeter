@@ -32,15 +32,15 @@ const char *TAG = "main";
 
 #define R1 100
 #define CT_RATIO 1000
-#define POWER_FACTOR 0.85
+#define POWER_FACTOR 1
 
 extern const uint8_t root_ca_pem_start[] asm("_binary_root_ca_pem_start");
 extern const uint8_t root_ca_pem_end[] asm("_binary_root_ca_pem_end");
 
 static TaskHandle_t collectorHandle = NULL;
 static uint8_t adc_buf[ADC_BUF_LEN];
-static uint32_t sample_buf_1[ADC_SAMPLE_FREQ_HZ];
-static uint32_t sample_buf_2[ADC_SAMPLE_FREQ_HZ];
+static uint32_t sample_buf_1[ADC_SAMPLE_FREQ_HZ / 2];
+static uint32_t sample_buf_2[ADC_SAMPLE_FREQ_HZ / 2];
 static uint32_t sample_buf_index_1 = 0;
 static uint32_t sample_buf_index_2 = 0;
 
@@ -236,7 +236,7 @@ void collector(void *pvParameters)
       sprintf(power_str, "%ld", w1 + w2);
       ESP_ERROR_CHECK(esp_mqtt_client_publish(client, MQTT_TOPIC_POWER_SOURCE, power_str, 0, 0, 0));
     }
-    vTaskDelay(1000 / portTICK_PERIOD_MS);
+    vTaskDelay(500 / portTICK_PERIOD_MS);
   }
 }
 
