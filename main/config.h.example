@@ -1,0 +1,9 @@
+#define WIFI_SSID "wifi_ssid"
+#define WIFI_PASSWORD "wifi_password"
+#define WIFI_AUTHMODE WIFI_AUTH_WPA2_PSK
+
+#define MQTT_BROKER_URL "mqtts://mqtt_broker_url"
+#define MQTT_USERNAME "mqtt_username"
+#define MQTT_PASSWORD "mqtt_password"
+
+#define MQTT_TOPIC_POWER_SOURCE "home/power/source"

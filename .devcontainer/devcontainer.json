@@ -1,0 +1,18 @@
+{
+  "dockerFile": "Dockerfile",
+  "containerEnv": {
+    "ESPBAUD": "80000000"
+  },
+  "extensions": [
+    "espressif.esp-idf-extension",
+    "ms-vscode.cmake-tools",
+    "ms-vscode.cpptools",
+    "github.copilot"
+  ],
+  "runArgs": [
+    "--privileged"
+  ],
+  "mounts": [
+    "source=/dev,target=/dev,type=bind"
+  ]
+}

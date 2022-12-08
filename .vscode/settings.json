@@ -1,0 +1,11 @@
+{
+  "idf.toolsPath": "/opt/esp",
+  "idf.espIdfPath": "/opt/esp/idf",
+  "idf.port": "/dev/ttyUSB0",
+  "idf.flashBaudRate": "80000000",
+  "idf.adapterTargetName": "esp32c3",
+  "files.associations": {
+    "*.h": "c",
+    "*.c": "c"
+  }
+}
